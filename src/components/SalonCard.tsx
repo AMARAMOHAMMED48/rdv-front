@@ -12,17 +12,9 @@ export default function SalonCard({ salon }: Props) {
       className="group block bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
     >
       <div className="h-48 bg-gray-100 overflow-hidden">
-        {salon.coverImage ? (
-          <img
-            src={salon.coverImage}
-            alt={salon.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-gray-300 text-5xl">
-            ✂
-          </div>
-        )}
+        <div className="w-full h-full flex items-center justify-center text-gray-300 text-5xl">
+          ✂
+        </div>
       </div>
       <div className="p-4">
         <h2 className="font-semibold text-gray-900 group-hover:text-rose-600 transition-colors">
@@ -31,15 +23,6 @@ export default function SalonCard({ salon }: Props) {
         <p className="text-sm text-gray-500 mt-1">
           {salon.city} · {salon.address}
         </p>
-        {salon.rating !== undefined && (
-          <div className="mt-2 flex items-center gap-1 text-sm">
-            <span className="text-yellow-500">★</span>
-            <span className="font-medium">{salon.rating.toFixed(1)}</span>
-            {salon.reviewCount !== undefined && (
-              <span className="text-gray-400">({salon.reviewCount} avis)</span>
-            )}
-          </div>
-        )}
       </div>
     </Link>
   );
